@@ -12,8 +12,14 @@
 
 ### JPEG
 
-- [文档](./filetype/jpeg/itu-t81.pdf)
+- 文档
+  - [JPEG](./filetype/jpeg/itu-t81.pdf)
+  - [JFIF](./filetype/jpeg/jfif3.pdf)
+  - [CIFF](./filetype/jpeg/CIFFspecV1R04.pdf)
 - 下载地址
-  - [w3.org](https://www.w3.org/Graphics/JPEG/itu-t81.pdf)
-  - [iso(收费)](https://www.iso.org/standard/36861.html)
+  - jpeg
+    - [w3.org](https://www.w3.org/Graphics/JPEG/itu-t81.pdf)
+    - [iso(收费)](https://www.iso.org/standard/36861.html)
+  - [jfif](https://www.w3.org/Graphics/JPEG/jfif3.pdf)
+  - [ciff](https://www.w3.org/Graphics/JPEG/CIFFspecV1R04.pdf)
 - [Wiki 百科](https://en.wikipedia.org/wiki/JPEG)
