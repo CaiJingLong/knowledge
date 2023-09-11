@@ -6,16 +6,16 @@
 
 ### ISOBMFF
 
-- [文档](./filetype/isobmff/w15177_14496-12_5th.-restyle-R5.doc)
+- [文档](./file-type/isobmff/w15177_14496-12_5th.-restyle-R5.doc)
 - [白皮书](https://mpeg.chiariglione.org/standards/mpeg-4/iso-base-media-file-format)
 - [wiki 百科](https://en.wikipedia.org/wiki/ISO_base_media_file_format)
 
 ### JPEG
 
 - 文档
-  - [JPEG](./filetype/jpeg/itu-t81.pdf)
-  - [JFIF](./filetype/jpeg/jfif3.pdf)
-  - [CIFF](./filetype/jpeg/CIFFspecV1R04.pdf)
+  - [JPEG](./file-type/jpeg/itu-t81.pdf)
+  - [JFIF](./file-type/jpeg/jfif3.pdf)
+  - [CIFF](./file-type/jpeg/CIFFspecV1R04.pdf)
 - 下载地址
   - jpeg
     - [w3.org](https://www.w3.org/Graphics/JPEG/itu-t81.pdf)
