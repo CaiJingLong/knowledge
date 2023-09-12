@@ -244,6 +244,8 @@ class BinaryReader {
 
 ### object 部分
 
+[解析的代码逻辑](https://github.com/rive-app/rive-flutter/blob/c6791d7b6dc994f45091836dbd8708a09ab23eee/lib/src/rive_file.dart#L44-L74)
+
 按照代码定义，object 部分是这样的。
 
 | 字段 | 类型 | 大小 | 说明 |
@@ -251,7 +253,24 @@ class BinaryReader {
 | type | uleb128 | 可变 | object type key |
 | property key values | uleb128 *n | 可变 *n | 属性对应的键值对 |
 
-当且仅当 type 为 0 时，表示这个 object 结束。
+当且仅当 type 为 0 时，表示这个 object 结束，[这部分的代码][type-int-to-type-name]。
+
+简单来说，一个 object 会包含一个用于标识 object 类型的 type key，然后是该 object 包含的的属性 key 和属性值。
+
+属性方面，它的 property-key 是一个 uleb128，它的值则根据 property-key 来决定是什么类型，
+dart 中 将这个值称为 [CoreFieldType][core-type-to-value-type]。
+值主要有以下几种类型：
+
+| 值 | 类型 | 说明
+| --- | --- | --- |
+| string | uleb128 + string | 先读取一个 uleb128 作为字符串的长度，然后再读取对应的字节数转为字符串 |
+| bytes | uleb128 + bytes | 先读取一个 uleb128 作为字节数组的长度，然后再读取对应的字节数组 |
+| uint | uleb128 | 读取一个 uleb128 作为无符号整数 |
+| double | double | 读取一个 32 位的浮点数 （4个字节）|
+| bool | bool | 读取一个字节，如果是 1 则为 true，否则为 false |
+| color | uint32 | 读取一个 32 位的无符号整数，表示颜色，理论上是对应的 ARGB |
+
+有一个额外的说明，就是如果对应的 propertyKey 为 null，则依然需要
 
 ### 典型的文件截图
 
@@ -260,3 +279,5 @@ class BinaryReader {
 [rive_common]: https://pub.dev/packages/rive_common
 [uleb128]: https://en.wikipedia.org/wiki/LEB128
 [uleb128-android]: https://source.android.com/docs/core/runtime/dex-format?hl=zh-cn
+[type-int-to-type-name]: https://github.com/rive-app/rive-flutter/blob/c6791d7b6dc994f45091836dbd8708a09ab23eee/lib/src/generated/rive_core_context.dart#L147-L362
+[core-type-to-value-type]: https://github.com/rive-app/rive-flutter/blob/c6791d7b6dc994f45091836dbd8708a09ab23eee/lib/src/generated/rive_core_context.dart#L1651-L1919
