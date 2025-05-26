@@ -69,15 +69,3 @@ dev_dependencies:
   riverpod_generator: ^2.0.0
   riverpod_lint: ^2.0.0
 ```
-
-## 贡献
-
-如果你发现任何错误或有改进建议，欢迎提交 issue 或 pull request。
-
-## 许可证
-
-本系列文章采用 [MIT 许可证](LICENSE)。
-
----
-
-Happy coding with Riverpod! 🚀
