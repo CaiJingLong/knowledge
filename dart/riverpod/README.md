@@ -4,7 +4,7 @@
 
 ## 文章列表
 
-1. [核心概念与基本原理](01_core_concepts_and_fundamentals.md)
+1. [核心概念与基本原理](01_core_concepts_and_basic_principles.md)
    - Provider、Ref 和 ProviderContainer 的实现原理
    - 状态管理的基本流程
    - 依赖注入机制
